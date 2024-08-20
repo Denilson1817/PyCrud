@@ -1,0 +1,53 @@
+###
+POST http://127.0.0.1:5000/movie HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDE3OTkyMywianRpIjoiYjIyNWJmNTEtMWI3OC00YmI1LWI4YmMtYTcyNmFjYzdjNTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzQyNWI1NWI0MzExNzc2MjU2NWI4MiIsIm5iZiI6MTcyNDE3OTkyMywiY3NyZiI6ImJiNjkwMjhiLTYyMWUtNGRlZS1hNDkyLWNiMTIyZTNjNTgzZiIsImV4cCI6MTcyNDE4MDgyM30.GqYH36h27iXe1OKhyWwIvMteVukuT4s99G6-5cbaiN8
+
+{
+    "name": "Twisters",
+    "actors": "Daisy Edgar-Jones, Glen Powell",
+    "director": "Lee Isaac Chung",
+    "genre": "Action, Adventure",
+    "rating": "75%",
+    "realeseDate": "Jul 19, 2024"
+}
+
+### 
+GET http://127.0.0.1:5000/movie HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDE3OTkyMywianRpIjoiYjIyNWJmNTEtMWI3OC00YmI1LWI4YmMtYTcyNmFjYzdjNTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzQyNWI1NWI0MzExNzc2MjU2NWI4MiIsIm5iZiI6MTcyNDE3OTkyMywiY3NyZiI6ImJiNjkwMjhiLTYyMWUtNGRlZS1hNDkyLWNiMTIyZTNjNTgzZiIsImV4cCI6MTcyNDE4MDgyM30.GqYH36h27iXe1OKhyWwIvMteVukuT4s99G6-5cbaiN8
+
+### 
+GET http://127.0.0.1:5000/movie/66c4e87a3852c5278627a0ab HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDE3OTkyMywianRpIjoiYjIyNWJmNTEtMWI3OC00YmI1LWI4YmMtYTcyNmFjYzdjNTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzQyNWI1NWI0MzExNzc2MjU2NWI4MiIsIm5iZiI6MTcyNDE3OTkyMywiY3NyZiI6ImJiNjkwMjhiLTYyMWUtNGRlZS1hNDkyLWNiMTIyZTNjNTgzZiIsImV4cCI6MTcyNDE4MDgyM30.GqYH36h27iXe1OKhyWwIvMteVukuT4s99G6-5cbaiN8
+
+###
+PUT http://127.0.0.1:5000/movie/66c4e87a3852c5278627a0ab HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDE3OTkyMywianRpIjoiYjIyNWJmNTEtMWI3OC00YmI1LWI4YmMtYTcyNmFjYzdjNTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzQyNWI1NWI0MzExNzc2MjU2NWI4MiIsIm5iZiI6MTcyNDE3OTkyMywiY3NyZiI6ImJiNjkwMjhiLTYyMWUtNGRlZS1hNDkyLWNiMTIyZTNjNTgzZiIsImV4cCI6MTcyNDE4MDgyM30.GqYH36h27iXe1OKhyWwIvMteVukuT4s99G6-5cbaiN8
+
+{
+    "name": "A gosth story",
+    "done": true
+}
+
+### 
+DELETE http://127.0.0.1:5000/movie/66c4e87a3852c5278627a0ab HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDE3OTkyMywianRpIjoiYjIyNWJmNTEtMWI3OC00YmI1LWI4YmMtYTcyNmFjYzdjNTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzQyNWI1NWI0MzExNzc2MjU2NWI4MiIsIm5iZiI6MTcyNDE3OTkyMywiY3NyZiI6ImJiNjkwMjhiLTYyMWUtNGRlZS1hNDkyLWNiMTIyZTNjNTgzZiIsImV4cCI6MTcyNDE4MDgyM30.GqYH36h27iXe1OKhyWwIvMteVukuT4s99G6-5cbaiN8
+
+###
+POST http://127.0.0.1:5000/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "DenilsonPerezC",
+    "password": "Waataakaa18."
+}
+
+###
+POST http://127.0.0.1:5000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "DenilsonPerezC",
+    "password": "Waataakaa18."
+}
