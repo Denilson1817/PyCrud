@@ -5,35 +5,34 @@ import logging
 import os
 
 from config.mongodb import mongo
-from routes.movie_routes import movie  # Importa solo todo desde routes.todo
-from routes.auth import auth  # Importa auth desde routes.auth
+from routes.movie_routes import movie  
+from routes.auth import auth 
 
-load_dotenv()                                      
-
+#cargar las variables de entorno
+load_dotenv()                               
+#instancia principal para Flask
 app = Flask(__name__)
 
-# Configuración de la URI de MongoDB
 app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
-# Clave secreta para firmar los JWT
-app.config['JWT_SECRET_KEY'] = 'supersecretkey'  # Cambia esto a una clave segura
+# clave para firmar los JWT
+app.config['JWT_SECRET_KEY'] = 'Denilson18.'
 
-# Inicializar extensiones
+# inicializar extensiones
 mongo.init_app(app)
 jwt = JWTManager(app)
 
-# Configurar logging
-logging.basicConfig(level=logging.DEBUG, 
-                    format='%(asctime)s %(levelname)s: %(message)s', 
-                    handlers=[logging.FileHandler('app.log'), logging.StreamHandler()])
+# configurar logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s: %(message)s', 
+handlers=[logging.FileHandler('app.log'), logging.StreamHandler()])
 
 @app.route('/')
 def index(): 
     return render_template('index.html')
 
-# Registrar los blueprints
+# registrar los blueprints/rutas
 app.register_blueprint(movie, url_prefix='/movie')
-app.register_blueprint(auth, url_prefix='/auth')  # Registrar el blueprint de auth
+app.register_blueprint(auth, url_prefix='/auth')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

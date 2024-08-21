@@ -32,7 +32,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsI
 
 ### 
 DELETE http://127.0.0.1:5000/movie/66c562e732058cd095f4c353 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDI1NDU3NSwianRpIjoiMzNlYjg1MTUtZGQ2NC00MmZjLWIzMTktNDAwZDYyYzIyZWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzU2NzBlNjZjMGIwNDRlZjViM2Q3MyIsIm5iZiI6MTcyNDI1NDU3NSwiY3NyZiI6ImIwOTczM2M2LWI0MTctNGQ0Yy1iM2FmLTQ4MmRiZWI5Yzg0YiIsImV4cCI6MTcyNDI1NTQ3NX0.OdeUwmw2Qgb8hwJQWaSTnM3C0mk9m2XpGMiHL_LoWE4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDI2OTcyMiwianRpIjoiZjRlYTk5NTEtYWQwMS00YjAwLWEzZDctNTRlZDM4OTdkNWFkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY2YzYzMzdiZWVkMzZjNzcyMjJhZjI0ZCIsIm5iZiI6MTcyNDI2OTcyMiwiY3NyZiI6Ijc0OThlOTQwLTI5ZWEtNDg4NS1hZjY0LTdhY2Q1MjM0YzI1NSIsImV4cCI6MTcyNDI3MDYyMn0.2_0UUcftRF3Sqetf8XskjkCBc-kg8eqQK_iKF-MhmDI
 
 ###
 POST http://127.0.0.1:5000/auth/register HTTP/1.1
@@ -52,8 +52,8 @@ Content-Type: application/json
     "password": "Waataakaa18."
 }
 
+//Docker
 
-//Docker 
 ###
 POST http://localhost:5000/auth/register HTTP/1.1
 Content-Type: application/json

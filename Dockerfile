@@ -1,23 +1,23 @@
-# Usa una imagen base de Python
+#imagen base de Python
 FROM python:3.10-slim
 
-# Establece el directorio de trabajo dentro del contenedor
+#directorio de trabajo para el contenedor
 WORKDIR /app
 
-# Copia el archivo de dependencias (reemplaza por requirements.txt si es necesario)
+#copia de los requirements
 COPY requirements.txt .
 
-#Copiar la uri de mongodb
+#copia de la uri de mongodb
 COPY .env ./
 
-# Instala las dependencias
+#instalacion de dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia el contenido de la carpeta src en el directorio de trabajo del contenedor
+#copia de src -> contenedor
 COPY ./src /app/src
 
-# Expone el puerto que usará Flask
+#puerto para Flask
 EXPOSE 5000
 
-# Define el comando por defecto para ejecutar la aplicación
+#comando para la ejecución
 CMD ["flask", "run", "--host=0.0.0.0"]

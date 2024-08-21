@@ -1,5 +1,5 @@
 def test_create_movie(client, app):
-    # Primero, obtener token de autenticación
+    # obtener token de auth
     client.post('/auth/register', json={
         'username': 'testuser',
         'password': 'testpassword'
@@ -10,7 +10,7 @@ def test_create_movie(client, app):
     })
     token = login_response.get_json()['access_token']
     
-    # Crear una película
+    # crear una película para el test
     response = client.post('/movie/', 
                            json={
                                'name': 'Test Movie',
@@ -26,7 +26,6 @@ def test_create_movie(client, app):
     assert response.get_json()['name'] == 'Test Movie'
 
 def test_get_movies(client, app):
-    # Crear una película para probar
     client.post('/auth/register', json={
         'username': 'testuser',
         'password': 'testpassword'
@@ -48,7 +47,7 @@ def test_get_movies(client, app):
                 },
                 headers={'Authorization': f'Bearer {token}'})
     
-    # Obtener todas las películas
+    # obtener todas las películas
     response = client.get('/movie/', headers={'Authorization': f'Bearer {token}'})
     assert response.status_code == 200
     assert len(response.get_json()) > 0
