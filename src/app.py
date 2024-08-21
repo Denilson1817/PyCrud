@@ -36,4 +36,4 @@ app.register_blueprint(movie, url_prefix='/movie')
 app.register_blueprint(auth, url_prefix='/auth')  # Registrar el blueprint de auth
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
