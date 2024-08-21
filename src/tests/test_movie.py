@@ -17,7 +17,7 @@ def test_create_movie(client, app):
                                'actors': 'Actor 1, Actor 2',
                                'director': 'Test Director',
                                'genre': 'Drama',
-                               'rating': '90%',
+                               'rating': '8',
                                'realeseDate': '2024-12-12'
                            },
                            headers={'Authorization': f'Bearer {token}'})
@@ -43,7 +43,7 @@ def test_get_movies(client, app):
                     'actors': 'Actor 1, Actor 2',
                     'director': 'Test Director',
                     'genre': 'Drama',
-                    'rating': '90%',
+                    'rating': '8',
                     'realeseDate': '2024-12-12'
                 },
                 headers={'Authorization': f'Bearer {token}'})
