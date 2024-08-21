@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from dotenv import load_dotenv
 from flask_jwt_extended import JWTManager
+import logging
 import os
 
 from config.mongodb import mongo
@@ -20,6 +21,11 @@ app.config['JWT_SECRET_KEY'] = 'supersecretkey'  # Cambia esto a una clave segur
 # Inicializar extensiones
 mongo.init_app(app)
 jwt = JWTManager(app)
+
+# Configurar logging
+logging.basicConfig(level=logging.DEBUG, 
+                    format='%(asctime)s %(levelname)s: %(message)s', 
+                    handlers=[logging.FileHandler('app.log'), logging.StreamHandler()])
 
 @app.route('/')
 def index(): 
